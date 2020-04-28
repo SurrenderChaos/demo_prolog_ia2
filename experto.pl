@@ -39,13 +39,13 @@ process(Diagnosis, Sintoma, Respuesta, Reply):- Respuesta \== no,
 Respuesta \== si, Respuesta \== porque, nl,
 write('Debes contestar si, no o porque.'), nl,
 pregunta_sobre(Diagnosis, Sintoma, Reply).
-escribe_diagnostico(Diagnosis):- write('El diagnostico es '),
+escribe_diagnostico(Diagnosis):- write('La deduccion es '),
 write(Diagnosis), write('.'), nl.
 ofrece_explicacion_diagnostico(Diagnosis):-
 pregunta_si_necesita_explicacion(Respuesta),
 actua_consecuentemente(Diagnosis, Respuesta).
 pregunta_si_necesita_explicacion(Respuesta):-
-write('Quieres que justifique este diagnostico? '),
+write('Quieres que justifique este analisis? '),
 read(RespuestaUsuario),
 asegura_respuesta_si_o_no(RespuestaUsuario, Respuesta).
 asegura_respuesta_si_o_no(si, si).
@@ -54,8 +54,8 @@ asegura_respuesta_si_o_no(_, Respuesta):- write('Debes contestar si o no.'),
 pregunta_si_necesita_explicacion(Respuesta).
 actua_consecuentemente(Diagnosis, no).
 actua_consecuentemente(Diagnosis, si):- conocimiento(Diagnosis, ListaDeSintomas),
-write('Se determino este diagnostico porque se encontraron los siguentes
-sintomas: '), nl,
+write('Se determino este analisis porque se encontraron las siguentes
+caracteristicas: '), nl,
 escribe_lista_de_sintomas(ListaDeSintomas).
 escribe_lista_de_sintomas([]).
 escribe_lista_de_sintomas([Head | Tail]):-
