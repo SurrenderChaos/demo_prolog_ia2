@@ -1,6 +1,8 @@
 /* BaseConocimientos1: diagnosticos y sintomas
 Dominio: diagnostico medico. Trata los sintomas como una lista multi-elementos
 */
+/*Hice un comentario
+*/
 conocimiento('sarampion',
 ['el paciente esta cubierto de puntos', 'el paciente tiene temperatura alta',
 'el paciente tiene ojos rojos','el paciente tiene tos seca']).
