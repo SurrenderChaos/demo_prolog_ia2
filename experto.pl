@@ -13,6 +13,7 @@ escribe_diagnostico(X),
 ofrece_explicacion_diagnostico(X),
 clean_scratchpad.
 consulta:-
+
 write('No hay suficiente conocimiento para elaborar un diagnostico.'),
 clean_scratchpad.
 haz_diagnostico(Diagnosis):-
