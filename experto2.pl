@@ -71,19 +71,24 @@ fallas('desconocido').
 
 
 fallas('Vendedor'):- nivel1111, !.
+fallas('Ingeniero'):- nivel2222, !.
 fallas('Artista'):- nivel8888, !.
 
-nivel1111:- nivel111, verificar('Compra mas de un tipo de producto').
+nivel1111:- nivel111; nivel222, verificar('Compra mas de un tipo de producto').
+nivel2222:- nivel222, verificar('Compra en su mayoria productos de tecnologia').
 nivel8888:- nivel888, verificar('Compra articulos de arte de calidad').
 
-nivel111:- nivel11, verificar('Compra mas de 10 productos a la semana').
+nivel111:- nivel11; nivel22, verificar('Compra mas de 10 productos a la semana').
+nivel222:- nivel22, verificar('Compra al menos 3 libros de ingenieria al anio').
 nivel888:- nivel88, verificar('Compra menos de 5 libros de arte al anio').
 
-nivel11:- nivel1, verificar('Compra mas de 10 productos baratos a la semana').
+nivel11:- nivel1; nivel2, verificar('Compra mas de 10 productos baratos a la semana').
+nivel22:- nivel2, verificar('Revisa productos de tecnologia con regularidad').
 nivel88:- nivel8, verificar('Compra menos de 10 pinturas por mes').
 
 
 nivel1:- hoja1; hoja2, verificar('Compra articulos con precios reducidos').
+nivel2:- hoja2, verificar('Compra articulos con altas calificaciones en calidad').
 nivel8:- hoja8; hoja7, verificar('Compra menos de 3 lienzos por semana').
 
 hoja1:- verificar('Compra 20 pantallas cada mes').
