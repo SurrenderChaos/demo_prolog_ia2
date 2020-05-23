@@ -71,7 +71,7 @@ fallas('desconocido').
 
 
 fallas('Vendedor'):- nivel1111, !.
-fallas('Artista'):- nive88888, !.
+fallas('Artista'):- nivel8888, !.
 
 nivel1111:- nivel111, verificar('Compra mas de un tipo de producto').
 nivel8888:- nivel888, verificar('Compra articulos de arte de calidad').
