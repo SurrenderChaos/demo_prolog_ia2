@@ -26,33 +26,34 @@ inicio:-
 
 
 
+%comentario de en la rama arbol01
 r19 :- nivel1,
-		verifica('Compra mas de un tipo de producto').
+		verificar('Compra mas de un tipo de producto').
 r20 :- nivel2,
-		verifica('Compra en su mayoria productos de tecnologia').
+		verificar('Compra en su mayoria productos de tecnologia').
 r21 :- nivel3,
-		verifica('Compra articulos de tecnologia de calidad').
+		verificar('Compra articulos de tecnologia de calidad').
 r22 :- nivel4,
-		verifica('Compra articulos de arte de calidad').
+		verificar('Compra articulos de arte de calidad').
 
 nivel1:- nodo,
-		verificar('Compra mas de 10 productos a la semana'),
+		verificar('Compra mas de 10 productos a la semana');
 		verificar('Compra al menos 3 libros de ingenieria al anio').
 nivel2:- nodo,
-		verificar('Compra al menos 3 libros de ingenieria al anio'),
+		verificar('Compra al menos 3 libros de ingenieria al anio');
 		verificar('Compra articulos con buenos comentarios').
 nivel3:- nodo,
-		verificar('Compra articulos con buenos comentarios'),
+		verificar('Compra articulos con buenos comentarios');
 		verificar('Compra articulos basados en el color').
 nivel4:- nodo,
-		verificar('Compra articulos basados en el color'),
+		verificar('Compra articulos basados en el color');
 		verificar('Compra menos de 5 libros de arte al anio').
 
 nodo:- nodo1,
-		verificar('Compra mas de 10 productos baratos a la semana'),
+		verificar('Compra mas de 10 productos baratos a la semana');
 		verificar('Revisa productos de tecnologia con regularidad').
 nodo:- nodo2,
-		verificar('Revisa productos de tecnologia con regularidad'),
+		verificar('Revisa productos de tecnologia con regularidad');
 		verificar('Revisa articulos basados en descuentos altos').
 
 
@@ -65,13 +66,13 @@ nodo2:- verificar('pregunta 2').
 
 
 
-posibilidad(vendedor):-r19,!.
-posibilidad(vendedor):-r20,!.
-posibilidad(ingeniero):-r20,!.
-posibilidad(ingeniero):-r21,!.
-posibilidad(artista):-r21,!.
-posibilidad(artista):-r22,!.
-posibilidad(desconocido).
+fallas('vendedor'):-r19,!.
+fallas('vendedor'):-r20,!.
+fallas('ingeniero'):-r20,!.
+fallas('ingeniero'):-r21,!.
+fallas('artista'):-r21,!.
+fallas('artista'):-r22,!.
+fallas('desconocido').
 
 
 
@@ -105,7 +106,7 @@ limpiar.
 botones :- lim,
 	send(@boton,free),
 	send(@btncarrera,free),
-	posibilidad(Falla),
+	fallas(Falla),
 	send(@texto,selection(' ')),
 	send(@respl,selection(Falla)),
 	new(@boton,button('inicia procedimiento ',message(@prolog,botones))),
