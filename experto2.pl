@@ -26,7 +26,6 @@ inicio:-
 
 
 
-%comentario de en la rama arbol01
 r19 :- nivel1,
 		verificar('Compra mas de un tipo de producto').
 r20 :- nivel2,
