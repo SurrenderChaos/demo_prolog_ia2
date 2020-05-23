@@ -84,7 +84,9 @@ nivel88:- nivel8, verificar('Compra menos de 10 pinturas por mes').
 
 
 nivel1:- hoja1, verificar('Compra articulos con precios reducidos').
+nivel2:- hoja2, nivel1.
 nivel8:- hoja8, verificar('Compra menos de 3 lienzos por semana').
+nivel7:- hoja7, nivel8.
 
 hoja1:- verificar('Compra 20 pantallas cada mes').
 hoja2:- verificar('Compra 2 memorias RAM por anio').
