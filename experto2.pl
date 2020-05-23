@@ -24,7 +24,7 @@ inicio:-
 	send(Menu,open_centered).
 
 
-
+/*
 
 r19 :- nivel1,
 		verificar('Compra mas de un tipo de producto').
@@ -60,11 +60,6 @@ nodo1:- verificar('pregunta 1').
 nodo2:- verificar('pregunta 2').
 
 
-
-
-
-
-
 fallas('vendedor'):-r19,!.
 fallas('vendedor'):-r20,!.
 fallas('ingeniero'):-r20,!.
@@ -72,8 +67,33 @@ fallas('ingeniero'):-r21,!.
 fallas('artista'):-r21,!.
 fallas('artista'):-r22,!.
 fallas('desconocido').
+*/
 
 
+fallas('Vendedor'):- nivel1111, !.
+fallas('Artista'):- nive88888, !.
+
+nivel1111:- nivel111, verificar('Compra mas de un tipo de producto').
+nivel8888:- nivel888, verificar('Compra articulos de arte de calidad').
+
+nivel111:- nivel11, verificar('Compra mas de 10 productos a la semana').
+nivel888:- nivel88, verificar('Compra menos de 5 libros de arte al anio').
+
+nivel11:- nivel1, verificar('Compra mas de 10 productos baratos a la semana').
+nivel88:- nivel8, verificar('Compra menos de 10 pinturas por mes').
+
+
+nivel1:- hoja1, verificar('Compra articulos con precios reducidos').
+nivel8:- hoja8, verificar('Compra menos de 3 lienzos por semana').
+
+hoja1:- verificar('Compra 20 pantallas cada mes').
+hoja2:- verificar('Compra 2 memorias RAM por anio').
+hoja3:- verificar('Compra 15 placas Arduino al mes').
+hoja4:- verificar('Compra un telefono con Android').
+hoja5:- verificar('Compra una tableta digitalizadora').
+hoja6:- verificar('Compra un Iphone').
+hoja7:- verificar('Compra un juego de pinturas').
+hoja8:- verificar('Compra 2 lienzos por semana').
 
 
 
