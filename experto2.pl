@@ -69,26 +69,31 @@ fallas('artista'):-r22,!.
 fallas('desconocido').
 */
 
-
-fallas('Vendedor'):- nivel1111, !.
-fallas('Ingeniero'):- nivel2222, !.
+/*
+fallas('Vendedor'):- nivel1111 ; nivel2222 .
+fallas('Ingeniero'):- nivel2222 ; nivel3333 .
+fallas('Artista'):- nivel3333, !.
 fallas('Artista'):- nivel8888, !.
 
-nivel1111:- nivel111; nivel222, verificar('Compra mas de un tipo de producto').
-nivel2222:- nivel222, verificar('Compra en su mayoria productos de tecnologia').
+nivel1111:- nivel111, verificar('Compra mas de un tipo de producto') ; nivel222, verificar('Compra mas de un tipo de producto').
+nivel2222:- nivel222, verificar('Compra en su mayoria productos de tecnologia'); nivel333, verificar('Compra en su mayoria productos de tecnologia').
+nivel3333:- nivel333, verificar('Compra articulos de tecnologia de calidad').
 nivel8888:- nivel888, verificar('Compra articulos de arte de calidad').
 
-nivel111:- nivel11; nivel22, verificar('Compra mas de 10 productos a la semana').
-nivel222:- nivel22, verificar('Compra al menos 3 libros de ingenieria al anio').
+nivel111:- nivel11, verificar('Compra mas de 10 productos a la semana'); nivel22, verificar('Compra mas de 10 productos a la semana').
+nivel222:- nivel22, verificar('Compra al menos 3 libros de ingenieria al anio'); nivel33, verificar('Compra al menos 3 libros de ingenieria al anio').
+nivel333:- nivel33, verificar('Compra articulos con buenos comentarios').
 nivel888:- nivel88, verificar('Compra menos de 5 libros de arte al anio').
 
-nivel11:- nivel1; nivel2, verificar('Compra mas de 10 productos baratos a la semana').
-nivel22:- nivel2, verificar('Revisa productos de tecnologia con regularidad').
+nivel11:- nivel1, verificar('Compra mas de 10 productos baratos a la semana') ; nivel2, verificar('Compra mas de 10 productos baratos a la semana').
+nivel22:- nivel2, verificar('Revisa productos de tecnologia con regularidad'); nivel3, verificar('Revisa productos de tecnologia con regularidad').
+nivel33:- nivel3, verificar('Revisa articulos basados en descuentos altos').
 nivel88:- nivel8, verificar('Compra menos de 10 pinturas por mes').
 
 
-nivel1:- hoja1; hoja2, verificar('Compra articulos con precios reducidos').
-nivel2:- hoja2, verificar('Compra articulos con altas calificaciones en calidad').
+nivel1:- hoja1, verificar('Compra articulos con precios reducidos') ; hoja2, verificar('Compra articulos con precios reducidos').
+nivel2:- hoja2, verificar('Compra articulos con altas calificaciones en calidad'); hoja3, verificar('Compra articulos con altas calificaciones en calidad').
+nivel3:- hoja3, verificar('Compra articulos para power users').
 nivel8:- hoja8; hoja7, verificar('Compra menos de 3 lienzos por semana').
 
 hoja1:- verificar('Compra 20 pantallas cada mes').
@@ -99,8 +104,41 @@ hoja5:- verificar('Compra una tableta digitalizadora').
 hoja6:- verificar('Compra un Iphone').
 hoja7:- verificar('Compra un juego de pinturas').
 hoja8:- verificar('Compra 2 lienzos por semana').
+*/
 
 
+
+fallas('C1'):- r8, !; r9, !.
+
+
+%r19:- r14, verificar('r19'), r15, verificar('r19').
+%r20:- r15, verificar('r20'), r16, verificar('r20').
+
+%r14:- r8, verificar('r14'), r9, verificar('r14').
+%r15:- r9, verificar('r15'), r10, verificar('r15').
+%r16:- r10, verificar('r16'), r11, verificar('r16').
+
+r8:- r1, verificar('r8'); r2, (verificar('r8'); r9).
+r9:- r2, verificar('r9'); r3, verificar('r9').
+%r10:- r3, verificar('r10'); r4, verificar('r10').
+%r11:- r4, verificar('r11'); r5, verificar('r11').
+
+r1:- h1, verificar('r1'); h2, verificar('r1').
+r2:- h2, verificar('r2'); h3, verificar('r2').
+r3:- h3, verificar('r3'); h4, verificar('r3').
+%r4:- h4, verificar('r4'); h5, verificar('r4').
+%r5:- h5, verificar('r5'); h6, verificar('r5').
+
+
+h1:- verificar('h1').
+h2:- verificar('h2').
+h3:- verificar('h3').
+h4:- verificar('h4').
+h5:- verificar('h5').
+h6:- verificar('h6').
+h7:- verificar('h7').
+h8:- verificar('h8').
+	
 
 :-dynamic si/1,no/1.
 preguntar(Problema):- new(Di,dialog('Prediccion de comprador')),
