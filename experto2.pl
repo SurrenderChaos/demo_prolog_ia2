@@ -1,16 +1,20 @@
 
 :-use_module(library(pce)).
+:- pce_image_directory('./imagenes').
+
 :-use_module(library(pce_style_item)).
 
+
+resource(fondo1, image, image('logo.jpg')).
 % metodo principal para iniciar la interfaz grafica, declaracion de
 % botones, labels, y la pocicion en pantalla.
-nueva_imagen(Ventana, Figura, Imagen, Posicion) :-
-new(Figura, figure),
-new(Bitmap, bitmap(resource(Imagen),@on)),
-send(Bitmap, name, 1),
-send(Figura, display, Bitmap),
-send(Figura, status, 1),
-Send(Ventana, display, Figura, Posicion).
+nueva_imagen(Ventana, Imagen, Posicion) :-
+											new(Figura, figure),
+											new(Bitmap, bitmap(resource(Imagen),@on)),
+											send(Bitmap, name, 1),
+											send(Figura, display, Bitmap),
+											send(Figura, status, 1),
+											send(Ventana, display, Figura, Posicion).
 
 inicio:-
 	new(Menu, dialog('Proyecto de IA 2 ', size(1000,800))),
@@ -20,6 +24,7 @@ inicio:-
 	new(@respl,label(nombre,'')),
 	new(Salir,button('SALIR',and(message(Menu, destroy),message(Menu,free)))),
 	new(@boton,button('realizar test',message(@prolog,botones))),
+	nueva_imagen(Menu, fondo1, point(100, 100 )),
 
 
 	send(Menu,append(L)),new(@btncarrera,button('Prediccion?')),
