@@ -4,6 +4,14 @@
 
 % metodo principal para iniciar la interfaz grafica, declaracion de
 % botones, labels, y la pocicion en pantalla.
+nueva_imagen(Ventana, Figura, Imagen, Posicion) :-
+new(Figura, figure),
+new(Bitmap, bitmap(resource(Imagen),@on)),
+send(Bitmap, name, 1),
+send(Figura, display, Bitmap),
+send(Figura, status, 1),
+Send(Ventana, display, Figura, Posicion).
+
 inicio:-
 	new(Menu, dialog('Proyecto de IA 2 ', size(1000,800))),
 	new(L,label(nombre,'SISTEMA PARA DETECTAR CARACTERISTICAS DE COMPRADORES')),
