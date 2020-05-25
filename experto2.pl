@@ -133,6 +133,7 @@ r10:- r3, verificar('r10').
 r11:- r4, verificar('r11').
 r12:- r5, verificar('r12').
 r13:- r6, verificar('r13').
+r13:- r7, verificar('r13').
 
 r1:- h1, verificar('r1').
 r2:- h2, verificar('r2').
@@ -140,6 +141,8 @@ r3:- h3, verificar('r3').
 r4:- h4, verificar('r4').
 r5:- h5, verificar('r5').
 r6:- h6, verificar('r6').
+r6:- h7, verificar('r6').
+r7:- h8, verificar('r7').
 
 
 h1:- verificar('h1').
