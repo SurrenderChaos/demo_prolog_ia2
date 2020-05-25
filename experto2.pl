@@ -111,26 +111,35 @@ hoja8:- verificar('Compra 2 lienzos por semana').
 fallas('Vendedor'):- r19, !.
 fallas('Ingeniero'):- r20, !.
 fallas('Ingeniero'):- r21, !.
+fallas('Artista'):- r22, !.
 
 
 r19:- r14, verificar('r19').
 r20:- r15, verificar('r20').
 r21:- r16, verificar('r21').
+r22:- r17, verificar('r22').
+r22:- r18, verificar('r22').
 
 r14:- r8, verificar('r14').
 r15:- r9, verificar('r15').
 r16:- r10, verificar('r16').
+r17:- r11, verificar('r17').
+r17:- r12, verificar('r17').
+r18:- r13, verificar('r18').
 
 r8:- r1, verificar('r8').
 r9:- r2, verificar('r9').
 r10:- r3, verificar('r10').
-%r11:- r4, verificar('r11'); r5, verificar('r11').
+r11:- r4, verificar('r11').
+r12:- r5, verificar('r12').
+r13:- r6, verificar('r13').
 
 r1:- h1, verificar('r1').
 r2:- h2, verificar('r2').
 r3:- h3, verificar('r3').
-%r4:- h4, verificar('r4'); h5, verificar('r4').
-%r5:- h5, verificar('r5'); h6, verificar('r5').
+r4:- h4, verificar('r4').
+r5:- h5, verificar('r5').
+r6:- h6, verificar('r6').
 
 
 h1:- verificar('h1').
