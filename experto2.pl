@@ -6,36 +6,36 @@
 
 
 resource(fondo_inicio, image, image('logo.jpg')).
-resource(h1, image, image('h1_imagen.jpg')).
-resource(h2, image, image('h2_imagen.jpg')).
-resource(h3, image, image('h3_imagen.jpg')).
-resource(h4, image, image('h4_imagen.jpg')).
-resource(h5, image, image('h5_imagen.jpg')).
-resource(h6, image, image('h6_imagen.jpg')).
-resource(h7, image, image('h7_imagen.jpg')).
-resource(h8, image, image('h8_imagen.jpg')).
-resource(r1, image, image('r1_imagen.jpg')).
-resource(r2, image, image('r2_imagen.jpg')).
-resource(r3, image, image('r3_imagen.jpg')).
-resource(r4, image, image('r4_imagen.jpg')).
-resource(r5, image, image('r5_imagen.jpg')).
-resource(r6, image, image('r6_imagen.jpg')).
-resource(r7, image, image('r7_imagen.jpg')).
-resource(r8, image, image('r8_imagen.jpg')).
-resource(r9, image, image('r9_imagen.jpg')).
-resource(r10, image, image('r10_imagen.jpg')).
-resource(r11, image, image('r11_imagen.jpg')).
-resource(r12, image, image('r12_imagen.jpg')).
-resource(r13, image, image('r13_imagen.jpg')).
-resource(r14, image, image('r14_imagen.jpg')).
-resource(r15, image, image('r15_imagen.jpg')).
-resource(r16, image, image('r16_imagen.jpg')).
-resource(r17, image, image('r17_imagen.jpg')).
-resource(r19, image, image('r19_imagen.jpg')).
-resource(r18, image, image('r18_imagen.jpg')).
-resource(r20, image, image('r20_imagen.jpg')).
-resource(r21, image, image('r21_imagen.jpg')).
-resource(r22, image, image('r22_imagen.jpg')).
+resource(compra_20_pantallas_cada_mes, image, image('h1_imagen.jpg')).
+resource(compra_2_memorias_ram_por_anio, image, image('h2_imagen.jpg')).
+resource(compra_15_placas_arduino_al_mes, image, image('h3_imagen.jpg')).
+resource(compra_un_telefono_con_android, image, image('h4_imagen.jpg')).
+resource(compra_una_tableta_digitalizadora, image, image('h5_imagen.jpg')).
+resource(compra_un_iphone, image, image('h6_imagen.jpg')).
+resource(compra_un_juego_de_pinturas, image, image('h7_imagen.jpg')).
+resource(compra_2_lienzos_por_semana, image, image('h8_imagen.jpg')).
+resource(compra_articulos_con_precios_reducidos, image, image('r1_imagen.jpg')).
+resource(compra_articulos_con_altas_calificaciones_en_calidad, image, image('r2_imagen.jpg')).
+resource(compra_articulos_para_power_users, image, image('r3_imagen.jpg')).
+resource(compra_articulos_recientes, image, image('r4_imagen.jpg')).
+resource(revisa_frecuentemente_productos_populares, image, image('r5_imagen.jpg')).
+resource(compra_articulos_basados_en_el_disenio, image, image('r6_imagen.jpg')).
+resource(compra_un_juego_de_pinceles_cada_2_anios, image, image('r7_imagen.jpg')).
+resource(compra_mas_de_10_productos_baratos_a_la_semana, image, image('r8_imagen.jpg')).
+resource(revisa_productos_de_tecnologia_con_regularidad, image, image('r9_imagen.jpg')).
+resource(revisa_articulos_basados_en_descuentos_altos, image, image('r10_imagen.jpg')).
+resource(compra_productos_adquiridos_por_amigos, image, image('r11_imagen.jpg')).
+resource(compra_articulos_de_marca, image, image('r12_imagen.jpg')).
+resource(compra_menos_de_10_pinturas_por_mes, image, image('r13_imagen.jpg')).
+resource(compra_mas_de_10_productos_por_semana, image, image('r14_imagen.jpg')).
+resource(compra_al_menos_3_libros_de_ingenieria_al_anio, image, image('r15_imagen.jpg')).
+resource(compra_articulos_con_buenos_comentarios, image, image('r16_imagen.jpg')).
+resource(compra_articulos_basados_en_el_color, image, image('r17_imagen.jpg')).
+resource(compra_mas_de_un_tipo_de_producto, image, image('r19_imagen.jpg')).
+resource(compra_menos_de_5_libros_de_arte_al_anio, image, image('r18_imagen.jpg')).
+resource(compra_en_su_mayoria_productos_de_tecnologia, image, image('r20_imagen.jpg')).
+resource(compra_articulos_de_tecnologia_de_calidad, image, image('r21_imagen.jpg')).
+resource(compra_articulos_de_arte_de_calidad, image, image('r22_imagen.jpg')).
 % metodo principal para iniciar la interfaz grafica, declaracion de
 % botones, labels, y la pocicion en pantalla.
 nueva_imagen(Ventana, Imagen, Posicion) :-
@@ -151,51 +151,51 @@ hoja8:- verificar('Compra 2 lienzos por semana').
 
 
 
-fallas('Vendedor'):- r19, !.
-fallas('Ingeniero'):- r20, !.
-fallas('Ingeniero'):- r21, !.
-fallas('Artista'):- r22, !.
+fallas('Vendedor: Existe una alta posibilidad de que el cliente se dedique a comercializar varios productos adquiridos en al tienda online. '):- r19, !.
+fallas('Ingeniero: Existe una alta probabilidad de que el cliente sea un estudiante de Ingenieria, o un Ingeniero ejerciendo la profesion. '):- r20, !.
+fallas('Ingeniero: Existe una alta probabilidad de que el cliente sea un estudiante de Ingenieria, o un Ingeniero ejerciendo la profesion.'):- r21, !.
+fallas('Artista: Existe una alta probabillidad de que el cliente sea un artista y adquiera paulatinamente su material de trabajo.'):- r22, !.
 
 
-r19:- r14, verificar('r19').
-r20:- r15, verificar('r20').
-r21:- r16, verificar('r21').
-r22:- r17, verificar('r22').
-r22:- r18, verificar('r22').
+r19:- r14, verificar('compra_mas_de_un_tipo_de_producto').
+r20:- r15, verificar('compra_en_su_mayoria_productos_de_tecnologia').
+r21:- r16, verificar('compra_articulos_de_tecnologia_de_calidad').
+r22:- r17, verificar('compra_articulos_de_arte_de_calidad').
+r22:- r18, verificar('compra_articulos_de_arte_de_calidad').
 
-r14:- r8, verificar('r14').
-r15:- r9, verificar('r15').
-r16:- r10, verificar('r16').
-r17:- r11, verificar('r17').
-r17:- r12, verificar('r17').
-r18:- r13, verificar('r18').
+r14:- r8, verificar('compra_mas_de_10_productos_por_semana').
+r15:- r9, verificar('compra_al_menos_3_libros_de_ingenieria_al_anio').
+r16:- r10, verificar('compra_articulos_con_buenos_comentarios').
+r17:- r11, verificar('compra_articulos_basados_en_el_color').
+r17:- r12, verificar('compra_articulos_basados_en_el_color').
+r18:- r13, verificar('compra_menos_de_5_libros_de_arte_al_anio').
 
-r8:- r1, verificar('r8').
-r9:- r2, verificar('r9').
-r10:- r3, verificar('r10').
-r11:- r4, verificar('r11').
-r12:- r5, verificar('r12').
-r13:- r6, verificar('r13').
-r13:- r7, verificar('r13').
+r8:- r1, verificar('compra_mas_de_10_productos_baratos_a_la_semana').
+r9:- r2, verificar('revisa_productos_de_tecnologia_con_regularidad').
+r10:- r3, verificar('revisa_articulos_basados_en_descuentos_altos').
+r11:- r4, verificar('compra_productos_adquiridos_por_amigos').
+r12:- r5, verificar('compra_articulos_de_marca').
+r13:- r6, verificar('compra_menos_de_10_pinturas_por_mes').
+r13:- r7, verificar('compra_menos_de_10_pinturas_por_mes').
 
-r1:- h1, verificar('r1').
-r2:- h2, verificar('r2').
-r3:- h3, verificar('r3').
-r4:- h4, verificar('r4').
-r5:- h5, verificar('r5').
-r6:- h6, verificar('r6').
-r6:- h7, verificar('r6').
-r7:- h8, verificar('r7').
+r1:- h1, verificar('compra_articulos_con_precios_reducidos').
+r2:- h2, verificar('compra_articulos_con_altas_calificaciones_en_calidad').
+r3:- h3, verificar('compra_articulos_para_power_users').
+r4:- h4, verificar('compra_articulos_recientes').
+r5:- h5, verificar('revisa_frecuentemente_productos_populares').
+r6:- h6, verificar('compra_articulos_basados_en_el_disenio').
+r6:- h7, verificar('compra_articulos_basados_en_el_disenio').
+r7:- h8, verificar('compra_un_juego_de_pinceles_cada_2_anios').
 
 
-h1:- verificar('h1').
-h2:- verificar('h2').
-h3:- verificar('h3').
-h4:- verificar('h4').
-h5:- verificar('h5').
-h6:- verificar('h6').
-h7:- verificar('h7').
-h8:- verificar('h8').
+h1:- verificar('compra_20_pantallas_cada_mes').
+h2:- verificar('compra_2_memorias_ram_por_anio').
+h3:- verificar('compra_15_placas_arduino_al_mes').
+h4:- verificar('compra_un_telefono_con_android').
+h5:- verificar('compra_una_tableta_digitalizadora').
+h6:- verificar('compra_un_iphone').
+h7:- verificar('compra_un_juego_de_pinturas').
+h8:- verificar('compra_2_lienzos_por_semana').
 	
 
 :-dynamic si/1,no/1.
