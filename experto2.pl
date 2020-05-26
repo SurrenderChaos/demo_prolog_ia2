@@ -5,7 +5,37 @@
 :-use_module(library(pce_style_item)).
 
 
-resource(fondo1, image, image('logo.jpg')).
+resource(fondo_inicio, image, image('logo.jpg')).
+resource(h1, image, image('h1_imagen.jpg')).
+resource(h2, image, image('h2_imagen.jpg')).
+resource(h3, image, image('h3_imagen.jpg')).
+resource(h4, image, image('h4_imagen.jpg')).
+resource(h5, image, image('h5_imagen.jpg')).
+resource(h6, image, image('h6_imagen.jpg')).
+resource(h7, image, image('h7_imagen.jpg')).
+resource(h8, image, image('h8_imagen.jpg')).
+resource(r1, image, image('r1_imagen.jpg')).
+resource(r2, image, image('r2_imagen.jpg')).
+resource(r3, image, image('r3_imagen.jpg')).
+resource(r4, image, image('r4_imagen.jpg')).
+resource(r5, image, image('r5_imagen.jpg')).
+resource(r6, image, image('r6_imagen.jpg')).
+resource(r7, image, image('r7_imagen.jpg')).
+resource(r8, image, image('r8_imagen.jpg')).
+resource(r9, image, image('r9_imagen.jpg')).
+resource(r10, image, image('r10_imagen.jpg')).
+resource(r11, image, image('r11_imagen.jpg')).
+resource(r12, image, image('r12_imagen.jpg')).
+resource(r13, image, image('r13_imagen.jpg')).
+resource(r14, image, image('r14_imagen.jpg')).
+resource(r15, image, image('r15_imagen.jpg')).
+resource(r16, image, image('r16_imagen.jpg')).
+resource(r17, image, image('r17_imagen.jpg')).
+resource(r19, image, image('r19_imagen.jpg')).
+resource(r18, image, image('r18_imagen.jpg')).
+resource(r20, image, image('r20_imagen.jpg')).
+resource(r21, image, image('r21_imagen.jpg')).
+resource(r22, image, image('r22_imagen.jpg')).
 % metodo principal para iniciar la interfaz grafica, declaracion de
 % botones, labels, y la pocicion en pantalla.
 nueva_imagen(Ventana, Imagen, Posicion) :-
@@ -24,7 +54,7 @@ inicio:-
 	new(@respl,label(nombre,'')),
 	new(Salir,button('SALIR',and(message(Menu, destroy),message(Menu,free)))),
 	new(@boton,button('realizar test',message(@prolog,botones))),
-	nueva_imagen(Menu, fondo1, point(100, 100 )),
+	nueva_imagen(Menu, fondo_inicio, point(100, 100 )),
 
 
 	send(Menu,append(L)),new(@btncarrera,button('Prediccion?')),
@@ -170,6 +200,7 @@ h8:- verificar('h8').
 
 :-dynamic si/1,no/1.
 preguntar(Problema):- new(Di,dialog('Prediccion de comprador')),
+	 nueva_imagen(Di,  Problema, point(100, 100 )),
      new(L2,label(texto,'Responder las preguntas:')),
      new(La,label(prob,Problema)),
      new(B1,button(si,and(message(Di,return,si)))),
