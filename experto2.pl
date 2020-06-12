@@ -14,7 +14,6 @@ resource(compra_una_tableta_digitalizadora, image, image('h5_imagen.jpg')).
 resource(compra_un_iphone, image, image('h6_imagen.jpg')).
 resource(compra_un_juego_de_pinturas, image, image('h7_imagen.jpg')).
 resource(compra_2_lienzos_por_semana, image, image('h8_imagen.jpg')).
-resource(compra_articulos_con_precios_reducidos, image, image('r1_imagen.jpg')).
 resource(compra_articulos_con_altas_calificaciones_en_calidad, image, image('r2_imagen.jpg')).
 resource(compra_articulos_para_power_users, image, image('r3_imagen.jpg')).
 resource(compra_articulos_recientes, image, image('r4_imagen.jpg')).
