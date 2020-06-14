@@ -65,4 +65,5 @@ clean_scratchpad:- retract(conocido(X)), fail.
 clean_scratchpad.
 conocido(_):- fail.
 not(X):- X,!,fail.
+not(X):- X,!,fail.
 not(_).
